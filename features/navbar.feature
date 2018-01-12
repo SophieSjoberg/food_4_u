@@ -5,6 +5,6 @@ Feature: Navbar
 
   Scenario: Display navbar to visitor
     Given I visit the landing page
-    Then the "Navbar" should be present
-    And I would like to see a "Home" button
-    And I would like to see a "Cart" button
+    Then "navigationBar" should be present
+    And I would like to see a "Home" link
+    And I would like to see a "Cart" link

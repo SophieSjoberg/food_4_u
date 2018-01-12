@@ -6,4 +6,4 @@ Feature: Footer
 
   Scenario: Display footer to visitor
     Given I visit the landing page
-    Then the "footer" should be present
+    Then "footer" should be present
