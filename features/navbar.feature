@@ -5,7 +5,6 @@ Feature: Navbar
 
   Scenario: Display navbar to visitor
     Given I visit the landing page
-    And "navigationBar" is present
-    And I would like to see a "Cart" link
-    Then I would like to click on "Home" link
-    And I would like to be redirected to landing page
+    And "navigationBar" is visible
+    Then I click on "Home" link
+    And I will be redirected to landing page

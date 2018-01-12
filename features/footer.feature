@@ -3,7 +3,6 @@ Feature: Footer
   In order to see information about the site
   I would like to see info about the platform company in the footer
 
-
   Scenario: Display footer to visitor
     Given I visit the landing page
-    Then "footer" is present
+    Then "footer" is visible
