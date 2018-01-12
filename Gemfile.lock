@@ -102,6 +102,8 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     gherkin (5.0.0)
     globalid (0.4.1)
@@ -134,6 +136,7 @@ GEM
     minitest (5.11.1)
     multi_json (1.13.0)
     multi_test (0.1.2)
+    multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.2.0)
     nokogiri (1.8.1)
@@ -177,6 +180,9 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -229,6 +235,12 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (3.9.1)
+      faraday (~> 0.10)
+    stripe-rails (1.2.0)
+      rails (>= 3)
+      responders
+      stripe
     term-ansicolor (1.6.0)
       tins (~> 1.0)
     thor (0.20.0)
@@ -278,6 +290,7 @@ DEPENDENCIES
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe-rails
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
