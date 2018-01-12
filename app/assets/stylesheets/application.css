@@ -17,3 +17,17 @@
 .search-btn:hover {
   cursor: pointer
 }
+
+@media (min-width: 768px) {
+.navbar-brand.abs
+    {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        margin:0 auto;
+    }
+}
+.card-footer {
+  margin-top: 100px
+}
