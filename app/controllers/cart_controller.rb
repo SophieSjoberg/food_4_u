@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  before_action :check_env
   def show
   end
 
@@ -6,7 +7,7 @@ class CartController < ApplicationController
     @amount = 1000
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
-      source: params[:stripeToken]
+      source: stripe_token(params)
     )
 
     charge = Stripe::Charge.create(
@@ -15,6 +16,18 @@ class CartController < ApplicationController
       description: 'Payment for food',
       currency: 'sek'
     )
+  end
 
+  private
+  def stripe_token(params)
+    Rails.env.test? ? generate_test_token : params[:stripeToken]
+  end
+
+  def generate_test_token
+    StripeMock.generate_card_token
+  end
+
+  def check_env
+    StripeMock.start if Rails.env.test?
   end
 end
