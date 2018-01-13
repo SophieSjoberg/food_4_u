@@ -1,5 +1,9 @@
 <h1>Welcome to our site!</h1>
 
+<% @menus.each do |menu| %>
+  <%= link_to menu.name, "##{menu.name}", class: 'scroll' %>
+<% end %>
+
 <h2>What do you feel like tonight?</h2>
 <input type='string' placeholder='eg. Thai, Italian, Burger'/>
 <input type='submit' value='Search' class='search-btn' />

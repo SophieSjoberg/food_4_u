@@ -7,3 +7,7 @@ Given("the following menus exist") do |table|
     FactoryBot.create(:menu, hash)
   end
 end
+
+Then("show me the page") do
+  save_and_open_page
+end
