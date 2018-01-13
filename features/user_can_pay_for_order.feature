@@ -3,6 +3,7 @@ Feature: User can pay for order
   In order to complete my purchase
   I need to fill in a stripe payment form
 
+  @javascript
   Scenario: User can fill in stripe form
     When I click "Pay with Card" button
     Then I fill in stripe form field "Email" with "random@random.com"
