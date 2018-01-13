@@ -15,5 +15,9 @@
  */
 
 .search-btn:hover {
-  cursor: pointer
+  cursor: pointer;
+}
+
+p {
+  margin-top: 100px;
 }
