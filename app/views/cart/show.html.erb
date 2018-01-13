@@ -1,2 +1,7 @@
-<h1>Cart#show</h1>
-<p>Find me in app/views/cart/show.html.erb</p>
+<%= form_tag cart_path do %>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%=ENV['PUBLISHABLE_KEY'] %>"
+    data-description="Payment for food"
+    data-amount="1000"
+    data-locale="auto"></script>
+<% end %>

@@ -8,11 +8,11 @@ class CartController < ApplicationController
       email: params[:stripeEmail],
       source: params[:stripeToken]
     )
-    
+
     charge = Stripe::Charge.create(
       customer: customer.id,
       amount: @amount,
-      description: 'payment for food',
+      description: 'Payment for food',
       currency: 'sek'
     )
 
