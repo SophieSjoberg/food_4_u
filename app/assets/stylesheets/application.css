@@ -18,6 +18,15 @@
   cursor: pointer;
 }
 
-p {
+
+ul p {
   margin-top: 100px;
+}
+
+ul {
+  margin: 50px 0;
+}
+
+.menu {
+  margin: 100px 0;
 }

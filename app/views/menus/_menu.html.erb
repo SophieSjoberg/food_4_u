@@ -1,5 +1,6 @@
-<ul id="<%= menu.name %>">
-  <h2><%= menu.name %></h2>
+<ul class='menu' id='menu-<%= menu.name %>'>
+  <%= link_to 'Back To Top', '#top', class: 'scroll' %>
+  <h2 id="<%= menu.name %>"><%= menu.name %></h2>
   <h4>Pizza</h4>
   <span>Margherita</span></br>
   <span>Napoli</span>
