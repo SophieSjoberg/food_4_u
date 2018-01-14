@@ -10,6 +10,10 @@ RSpec.describe Menu, type: :model do
     it { is_expected.to validate_presence_of :name }
   end
 
+  describe 'Relations' do
+    it { is_expected.to belong_to :restaurant }
+  end
+
   describe FactoryBot do
     it 'should be valid' do
       expect(FactoryBot.create(:menu)).to be_valid

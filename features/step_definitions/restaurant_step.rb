@@ -12,6 +12,7 @@ end
 Given("the following menus exist for {string}") do |restaurant, table|
   restaurant = Restaurant.find_by(name: restaurant)
   table.hashes.each do |hash|
-    restaurant.menus.create(hash)
+    hash[:restaurant] = restaurant
+    FactoryBot.create(:menu, hash)
   end
 end
