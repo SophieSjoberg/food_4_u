@@ -14,8 +14,8 @@
 
 @media (min-width: 768px) {
   .navbar-brand.abs {
-    position: absolute;
-    width: 100%;
+    border: 2px solid black;
+    width: 40%;
     left: 0;
     text-align: center;
     margin: 0 auto;
