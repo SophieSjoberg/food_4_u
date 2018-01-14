@@ -16,6 +16,11 @@ class CartController < ApplicationController
       description: 'Payment for food',
       currency: 'sek'
     )
+
+    if charge.paid?
+      message = 'Your transaction was successful!'
+      redirect_to cart_path, notice: message
+    end
   end
 
   private
