@@ -16,6 +16,12 @@ Then("I fill in stripe form field {string} with {string}") do |field, value|
   end
 end
 
-Then("I submit the stripe form") do
+And("I submit the stripe form") do
+  within_frame @stripe_iframe do
+    find('.Section-button').click
+  end
+end
 
+Then("I should be redirected to the cart page") do
+  expect(current_path).to eq cart_path
 end
