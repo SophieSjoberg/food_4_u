@@ -1,9 +1,10 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
 .search-btn:hover {
   cursor: pointer;
-}
-
-ul p {
-  margin-top: 100px;
 }
 
 ul {
@@ -26,5 +27,9 @@ ul {
 }
 
 .card-footer {
+  margin-top: 100px;
+}
+
+.menu p {
   margin-top: 100px;
 }

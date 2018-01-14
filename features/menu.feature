@@ -13,4 +13,3 @@ Feature: Menus displayed for visitors
   Scenario: Visitor visits landing page
     Then I should see 'Lunch'
     And I should see 'Dinner'
-    And show me the page
