@@ -11,3 +11,24 @@ counter = 0
 Restaurant.create!(config) do |c|
   puts "Create restaurant #{counter += 1} with name: #{c.name}"
 end
+
+seed_file = Rails.root.join('db', 'seeds', 'menus.yml')
+config = YAML::load_file(seed_file)
+counter = 0
+Restaurant.all[counter].menus.create!(config) do |c|
+  puts "Create menu #{counter += 1} with name: #{c.name}"
+end
+
+seed_file = Rails.root.join('db', 'seeds', 'menus.yml')
+config = YAML::load_file(seed_file)
+counter = 1
+Restaurant.all[counter].menus.create!(config) do |c|
+  puts "Create menu #{counter += 1} with name: #{c.name}"
+end
+
+seed_file = Rails.root.join('db', 'seeds', 'menus.yml')
+config = YAML::load_file(seed_file)
+counter = 2
+Restaurant.all[counter].menus.create!(config) do |c|
+  puts "Create menu #{counter += 1} with name: #{c.name}"
+end
