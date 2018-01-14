@@ -2,7 +2,6 @@ Then("I should see {string}") do |content|
   expect(page).to have_content content
 end
 
-
 When("I click {string}") do |element|
   click_link_or_button element
 end
