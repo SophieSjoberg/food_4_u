@@ -19,7 +19,7 @@ end
 And("I submit the stripe form") do
   within_frame @stripe_iframe do
     find('.Section-button').click
-    sleep(5)
+    sleep(10)
   end
 end
 
