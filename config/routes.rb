@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   get '/cart', to: 'cart#show'
-
-  root controller: :landing, action: :index
-
-
+  root controller: :restaurants, action: :index
+  resources :restaurants, only: [:show, :index]
 end
