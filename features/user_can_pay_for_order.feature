@@ -12,5 +12,4 @@ Feature: User can pay for order
     And I fill in stripe form field "Expiry" with "12/2021"
     And I fill in stripe form field "CVC" with "123"
     And I submit the stripe form
-    Then I should be redirected to the cart page
-    And I should see "Your transaction was successful!"
+    Then I should see "Your transaction was successful!"
