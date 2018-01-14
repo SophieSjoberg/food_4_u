@@ -22,3 +22,7 @@ And("I submit the stripe form") do
     sleep(5)
   end
 end
+
+Then("I should not see {string}") do |content|
+  expect(page).not_to have_content content
+end
