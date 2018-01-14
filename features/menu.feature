@@ -12,8 +12,9 @@ Feature: Menus displayed for visitors
       | name    |
       | Lunch   |
       | Dinner  |
-    And I visit the landing page
 
   Scenario: Visitor visits landing page
+    Given I visit the "ThaiTanic" page
     Then I should see 'Lunch'
     And I should see 'Dinner'
+    And show me the page
