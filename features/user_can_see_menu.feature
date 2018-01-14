@@ -17,4 +17,3 @@ Feature: Menus displayed for visitors
     Given I visit the "ThaiTanic" page
     Then I should see 'Lunch'
     And I should see 'Dinner'
-    And show me the page
