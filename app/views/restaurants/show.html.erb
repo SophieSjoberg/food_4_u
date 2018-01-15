@@ -4,7 +4,7 @@
 <div id='menu-links'>
   <ul>
     <% @menus.each do |menu| %>
-      <%= link_to menu.name, "#menu-#{menu.name}", class: 'scroll' %>
+      <%= link_to menu.name, "#menu-#{menu.id}", class: 'scroll' %>
     <% end %>
   </ul>
 </div>
