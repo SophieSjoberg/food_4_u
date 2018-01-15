@@ -8,7 +8,7 @@ When("I click {string} button") do |element|
   @stripe_iframe = all('iframe[name=stripe_checkout_app]').last
 end
 
-Then("I fill in stripe form field {string} with {string}") do |field, value|
+And("I fill in stripe form field {string} with {string}") do |field, value|
   sleep(2)
   @stripe_iframe = all('iframe[name=stripe_checkout_app]').last
   within_frame @stripe_iframe do

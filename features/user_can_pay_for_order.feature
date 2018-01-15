@@ -7,7 +7,7 @@ Feature: User can pay for order
   Scenario: User can fill in stripe form
     Given I visit the cart page
     When I click "Pay with Card" button
-    Then I fill in stripe form field "Email" with "random@random.com"
+    And I fill in stripe form field "Email" with "random@random.com"
     And I fill in stripe form field "Card number" with "4242 4242 4242 4242"
     And I fill in stripe form field "Expiry" with "12/2021"
     And I fill in stripe form field "CVC" with "123"
@@ -19,12 +19,13 @@ Feature: User can pay for order
   Scenario: User fill in incorrect card number
     Given I visit the cart page
     When I click "Pay with Card" button
-    Then I fill in stripe form field "Email" with "random@random.com"
+    And I fill in stripe form field "Email" with "random@random.com"
     And I fill in stripe form field "Card number" with "4242 4242 4242 4241"
     And I fill in stripe form field "Expiry" with "12/2021"
     And I fill in stripe form field "CVC" with "123"
     And I submit the stripe form
-    Then I should not see "Your transaction was successful!"
+    Then I should be on the "cart" page
+    And I should not see "Your transaction was successful!"
 
   @javascript
   Scenario: Users card is expired
@@ -34,19 +35,19 @@ Feature: User can pay for order
     And I fill in stripe form field "Card number" with "4000000000000069"
     And I fill in stripe form field "Expiry" with "12/2021"
     And I fill in stripe form field "CVC" with "123"
-    And I submit the stripe form
-    Then I should not see "Your transaction was successful!"
+    Then I should be on the "cart" page
+    And I should not see "Your transaction was successful!"
 
   @javascript
   Scenario: User fill in incorrect CVC number
     Given I visit the cart page
     When I click "Pay with Card" button
-    Then I fill in stripe form field "Email" with "random@random.com"
+    And I fill in stripe form field "Email" with "random@random.com"
     And I fill in stripe form field "Card number" with "4000 0000 0000 0127"
     And I fill in stripe form field "Expiry" with "12/2021"
     And I fill in stripe form field "CVC" with "123"
-    And I submit the stripe form
-    Then I should not see "Your transaction was successful!"
+    Then I should be on the "cart" page
+    And I should not see "Your transaction was successful!"
 
   @javascript
   Scenario: Users card is declined
@@ -56,16 +57,17 @@ Feature: User can pay for order
     And I fill in stripe form field "Card number" with "4000000000000002"
     And I fill in stripe form field "Expiry" with "12/2021"
     And I fill in stripe form field "CVC" with "123"
-    And I submit the stripe form
-    Then I should not see "Your transaction was successful!"
+    Then I should be on the "cart" page
+    And I should not see "Your transaction was successful!"
 
   @javascript
   Scenario: Proccessing error
     Given I visit the cart page
     When I click "Pay with Card" button
-    Then I fill in stripe form field "Email" with "random@random.com"
+    And I fill in stripe form field "Email" with "random@random.com"
     And I fill in stripe form field "Card number" with "4000000000000119"
     And I fill in stripe form field "Expiry" with "12/2021"
     And I fill in stripe form field "CVC" with "123"
     And I submit the stripe form
-    Then I should not see "Your transaction was successful!"
+    Then I should be on the "cart" page
+    And I should not see "Your transaction was successful!"
