@@ -1,9 +1,9 @@
+@javascript
 Feature: User can pay for order
   As a visitor
   In order to complete my purchase
   I need to fill in a stripe payment form
 
-  @javascript
   Scenario: User can fill in stripe form
     Given I visit the cart page
     When I click "Pay with Card" button
@@ -15,7 +15,6 @@ Feature: User can pay for order
     Then I should be on the "cart" page
     And I should see "Your transaction was successful!"
 
-  @javascript
   Scenario: User fill in incorrect card number
     Given I visit the cart page
     When I click "Pay with Card" button
@@ -27,7 +26,6 @@ Feature: User can pay for order
     Then I should be on the "cart" page
     And I should not see "Your transaction was successful!"
 
-  @javascript
   Scenario: Users card is expired
     Given I visit the cart page
     When I click "Pay with Card" button
@@ -38,7 +36,6 @@ Feature: User can pay for order
     Then I should be on the "cart" page
     And I should not see "Your transaction was successful!"
 
-  @javascript
   Scenario: User fill in incorrect CVC number
     Given I visit the cart page
     When I click "Pay with Card" button
@@ -49,7 +46,6 @@ Feature: User can pay for order
     Then I should be on the "cart" page
     And I should not see "Your transaction was successful!"
 
-  @javascript
   Scenario: Users card is declined
     Given I visit the cart page
     When I click "Pay with Card" button
@@ -60,8 +56,7 @@ Feature: User can pay for order
     Then I should be on the "cart" page
     And I should not see "Your transaction was successful!"
 
-  @javascript
-  Scenario: Proccessing error
+  Scenario: Processing error
     Given I visit the cart page
     When I click "Pay with Card" button
     And I fill in stripe form field "Email" with "random@random.com"
